@@ -14,13 +14,8 @@ export default function Letras(props) {
     novoarray.push(letras);
     setLetrasSelecionadas(novoarray);
     if (!palavra.includes(letras)) {
-
-
-
-
       setErros((erros) => erros + 1)
       console.log(erros + 1)
-
     }
 
 
@@ -37,7 +32,7 @@ export default function Letras(props) {
       }
     }
 
-    if(acertos + 1 === palavra.length){
+    if (acertos + 1 === palavra.length) {
       setPalavraerrada("certa")
     }
 
@@ -55,6 +50,7 @@ export default function Letras(props) {
     <div className="palavras">
       {alfabeto.map((letra) => (
         <button
+          data-test="letter"
           key={letra}
           disabled={disabled}
           onClick={(event) => clicarLetra(event, letra)}

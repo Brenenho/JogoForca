@@ -49,12 +49,12 @@ export default function Jogo(props) {
 
   return (
     <div className="forca">
-      <img className="imagemforca" src={imagensForca[erros]} alt="" />
-      <button className="botaoescolher" onClick={() => escolherPalavra()}>Escolher palavra</button>
+      <img className="imagemforca" data-test="game-image" src={imagensForca[erros]} alt="" />
+      <button className="botaoescolher" data-test="choose-word" onClick={() => escolherPalavra()}>Escolher palavra</button>
       <div className="teclado">
-        <ul className="listaletras">
+        <ul data-test="word" className="listaletras">
           {palavra.map((letra, indice) => (
-            <li className={palavraerrada} key={indice}>
+            <li className={palavraerrada}  key={indice}>
               {letrasSelecionadas.includes(letra) || erros === 6 ? letra : "_"}
             </li>)
           )}
