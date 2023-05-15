@@ -8,7 +8,7 @@ import imagemforca6 from "./assets/forca6.png"
 import React from "react";
 
 
-import palavras from "./palavras.js";
+import palavras from "../palavras.js";
 
 export default function Jogo(props) {
   const { palavra, setPalavra, setDisabled, disabledclasse, setDisabledclasse, letrasSelecionadas, setLetrasSelecionadas, letrasDisabled, setLetrasDisabled, erros, setErros, letraposta, setLetraposta } = props;

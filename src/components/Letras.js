@@ -19,9 +19,13 @@ export default function Letras(props) {
     }
 
 
-    if (erros + 1 === 6) {
+    if (!palavra.includes(letras)) {
+      if (erros + 1 === 6) {
+        
+      
       setDisabled(true)
       setPalavraerrada("errada")
+      }
     }
 
     let acertos = 0;

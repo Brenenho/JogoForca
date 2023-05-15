@@ -1,4 +1,4 @@
-import palavras from "./palavras.js";
+import palavras from "../palavras.js";
 import React from "react";
 import Jogo from "./Jogo.js"
 import Letras from "./Letras.js"
