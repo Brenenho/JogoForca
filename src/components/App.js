@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <Jogo palavraerrada={palavraerrada} setPalavraerrada={setPalavraerrada} letrasDisabled={letrasDisabled} setLetrasDisabled={setLetrasDisabled} palavra={palavra} setPalavra={setPalavra} erros={erros} setErros={setErros}  setDisabled={setDisabled} disabledclasse={disabledclasse} setDisabledclasse={setDisabledclasse} letrasSelecionadas={letrasSelecionadas} setLetrasSelecionadas={setLetrasSelecionadas} />
+      <Jogo palavraerrada={palavraerrada} setPalavraerrada={setPalavraerrada} letrasDisabled={letrasDisabled} setLetrasDisabled={setLetrasDisabled} palavra={palavra} setPalavra={setPalavra} erros={erros} setErros={setErros} setDisabled={setDisabled} disabledclasse={disabledclasse} setDisabledclasse={setDisabledclasse} letrasSelecionadas={letrasSelecionadas} setLetrasSelecionadas={setLetrasSelecionadas} />
       <Letras palavraerrada={palavraerrada} setPalavraerrada={setPalavraerrada} letrasDisabled={letrasDisabled} setLetrasDisabled={setLetrasDisabled} letraposta={letraposta} setLetraposta={setLetraposta} disabled={disabled} setDisabled={setDisabled} erros={erros} setErros={setErros} letrasSelecionadas={letrasSelecionadas} setLetrasSelecionadas={setLetrasSelecionadas} palavra={palavra} disabledclasse={disabledclasse} setDisabledclasse={setDisabledclasse} />
     </div>
   );
@@ -30,7 +30,7 @@ function Letras(props) {
   const { letrasSelecionadas, setLetrasSelecionadas } = props;
   const { disabled, setDisabled } = props;
   let { palavra, disabledclasse, setDisabledclasse, letrasDisabled, setLetrasDisabled, erros, setErros, letraposta, setLetraposta } = props;
-  const {palavraerrada, setPalavraerrada} = props;
+  const { palavraerrada, setPalavraerrada } = props;
 
 
   function clicarLetra(event, letras) {
@@ -38,22 +38,36 @@ function Letras(props) {
     novoarray.push(letras);
     setLetrasSelecionadas(novoarray);
     if (!palavra.includes(letras)) {
-      
-      
-      
-      
+
+
+
+
       setErros((erros) => erros + 1)
       console.log(erros + 1)
-      
+
     }
 
-    
+
     if (erros + 1 === 6) {
       setDisabled(true)
-      setPalavraerrada("")
+      setPalavraerrada("errada")
     }
 
-    
+    let acertos = 0;
+
+    for (let i = 0; i < palavra.length; i++) {
+      if (letrasSelecionadas.includes(palavra[i])) {
+        acertos++;
+      }
+    }
+
+    if(acertos + 1 === palavra.length){
+      setPalavraerrada("certa")
+    }
+
+    console.log(acertos);
+
+
     event.target.className = "palavra desabilitada";
 
     event.target.disabled = true;
@@ -82,8 +96,8 @@ function Letras(props) {
 function Jogo(props) {
   const { palavra, setPalavra, setDisabled, disabledclasse, setDisabledclasse, letrasSelecionadas, setLetrasSelecionadas, letrasDisabled, setLetrasDisabled, erros, setErros, letraposta, setLetraposta } = props;
   const imagensForca = [imagemforca0, imagemforca1, imagemforca2, imagemforca3, imagemforca4, imagemforca5, imagemforca6];
-  const [palavraEscolhida, setPalavraEscolhida, ] = React.useState(false);
-  const {palavraerrada, setPalavraerrada} = props;
+  const [palavraEscolhida, setPalavraEscolhida,] = React.useState(false);
+  const { palavraerrada, setPalavraerrada } = props;
 
   function resetJogo() {
     setPalavra([]);
@@ -102,13 +116,13 @@ function Jogo(props) {
       setLetrasSelecionadas([]);
       setLetrasDisabled(false);
       setDisabled(false);
-      
+
 
       let palavraSortida = palavras[Math.floor(Math.random() * palavras.length)];
       let array = palavraSortida.split('');
 
       setPalavra(array);
-      
+
       setPalavraEscolhida(true);
       console.log(palavraSortida)
       console.log(array)
@@ -124,7 +138,7 @@ function Jogo(props) {
         <ul className="listaletras">
           {palavra.map((letra, indice) => (
             <li className={palavraerrada} key={indice}>
-              {letrasSelecionadas.includes(letra) || erros === 6  ? letra : "_"}
+              {letrasSelecionadas.includes(letra) || erros === 6 ? letra : "_"}
             </li>)
           )}
         </ul>
