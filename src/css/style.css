@@ -83,6 +83,14 @@ color: #FFFFFF;
     color: #798A9F;
 }
 
+.errada {
+    color: red
+}
+
+.certa {
+    color: green
+}
+
 .listaunderline {
     position: absolute;
     width: 308px;
