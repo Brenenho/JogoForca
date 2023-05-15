@@ -1,4 +1,4 @@
-# Jogo da Forca
+# Jogo da Forca 😵
 
 Este é um jogo da forca simples desenvolvido em React como projeto para fins educacionais.
 
