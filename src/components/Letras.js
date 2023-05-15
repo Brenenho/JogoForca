@@ -7,7 +7,7 @@ export default function Letras(props) {
   const { disabled, setDisabled } = props;
   let { palavra, disabledclasse, setDisabledclasse, letrasDisabled, setLetrasDisabled, erros, setErros, letraposta, setLetraposta } = props;
   const { palavraerrada, setPalavraerrada } = props;
-
+  const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   function clicarLetra(event, letras) {
     let novoarray = [...letrasSelecionadas];
@@ -40,15 +40,9 @@ export default function Letras(props) {
       setPalavraerrada("certa")
     }
 
-    console.log(acertos);
-
-
     event.target.className = "palavra desabilitada";
-
     event.target.disabled = true;
   }
-
-  const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
   return (
     <div className="palavras">
