@@ -1,0 +1,132 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 59px;
+}
+
+
+.forca {
+    position: relative;
+    width: 934px;
+    height: 466.67px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.imagemforca {
+    width: 400px;
+    height: 466.67px;
+}
+
+.botaoescolher {
+    width: 200px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    border: none;
+    background: #27AE60;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+color: #FFFFFF;
+
+}
+
+.palavras {
+    width: 700px;
+    height: 91px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    
+    
+}
+
+.palavra {
+    width: 40px;
+    height: 40px;
+
+    background: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+
+    
+    color: #39739D;
+}
+
+.palavra[disabled] {
+    background: #9FAAB5;
+    color: #798A9F;
+}
+
+.listaunderline {
+    position: absolute;
+    width: 308px;
+    height: 68px;
+    top: 390px;
+    right: 0px;
+    gap: 3px;
+
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+color: #000000;
+}
+
+.listaletras {
+    position: absolute;
+    width: 308px;
+    height: 68px;
+    top: 395px;
+    right: 0px;
+    gap: 4px;
+
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+color: #000000;
+}
+
+.teclado {
+    display: flex;
+}
