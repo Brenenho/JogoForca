@@ -33,10 +33,10 @@ export default function Jogo(props) {
       setLetrasSelecionadas([]);
       setLetrasDisabled(false);
       setDisabled(false);
-
+      
       let palavraSortida = palavras[Math.floor(Math.random() * palavras.length)];
       let array = palavraSortida.split('');
-
+      console.log(array)
       setPalavra(array);
       setPalavraEscolhida(true);
     }

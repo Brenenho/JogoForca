@@ -13,6 +13,8 @@ export default function Letras(props) {
     let novoarray = [...letrasSelecionadas];
     novoarray.push(letras);
     setLetrasSelecionadas(novoarray);
+
+
     if (!palavra.includes(letras)) {
       setErros((erros) => erros + 1)
       console.log(erros + 1)
@@ -36,9 +38,12 @@ export default function Letras(props) {
       }
     }
 
-    if (acertos + 1 === palavra.length) {
+    if (palavra.includes(letras)) {
+      if (acertos + 1 === palavra.length) {
+   
       setPalavraerrada("certa")
-    }
+      setDisabled(true)
+    }}
 
     event.target.className = "palavra desabilitada";
     event.target.disabled = true;
